@@ -49,22 +49,26 @@ public class Main {
 			Scanner sc = new Scanner(new File(fileName));
 			sc.useDelimiter("\t");
 			String tempProd = "0";
+			String tempProd2 = "0";
 			String tempManufacturers = "0";
+			String tempManufacturers2 = "0";
 			int lastNumOfProducts;
 			int lastNumOfManufacturers;
 			
 			while(sc.hasNextLine()) {
 				sc.next();
 				tempProd = sc.next();
+				if (!tempProd.isEmpty()) tempProd2 = tempProd;
 				sc.next();
 				tempManufacturers = sc.next();
+				if (!tempManufacturers.isEmpty()) tempManufacturers2 = tempManufacturers;
 				sc.nextLine();
 			}
 			
 			sc.close();	
 			
-			lastNumOfProducts = Integer.parseInt(tempProd);
-			lastNumOfManufacturers = Integer.parseInt(tempManufacturers);
+			lastNumOfProducts = Integer.parseInt(tempProd2);
+			lastNumOfManufacturers = Integer.parseInt(tempManufacturers2);
 			
 			if (lastNumOfProducts != products) sb.append(products);
 			
